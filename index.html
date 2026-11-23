@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHADIN TOPUP</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #081426;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: linear-gradient(135deg,#123c70,#071426);
+  text-align: center;
+  padding: 28px 12px;
+  border-bottom: 3px solid #ffc400;
+}
+
+header h1 {
+  color: #ffc400;
+  margin: 0;
+  font-size: 30px;
+}
+
+header p {
+  color: #ddd;
+}
+
+.container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 12px;
+}
+
+.box {
+  background: #172b47;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 18px;
+  box-shadow: 0 5px 15px #0005;
+}
+
+h2 {
+  text-align: center;
+  color: #ffc400;
+}
+
+label {
+  display: block;
+  margin: 14px 0 7px;
+}
+
+input, select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #52627a;
+  border-radius: 8px;
+  background: #fff;
+  color: #111;
+  font-size: 16px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 18px;
+  background: #ffc400;
+  color: #111;
+  border: none;
+  border-radius: 9px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.payment {
+  background: #102d28;
+  padding: 15px;
+  border-radius: 10px;
+  line-height: 1.8;
+}
+
+.price {
+  color: #42f59b;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #aaa;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>💎 SHADIN TOPUP 💎</h1>
+<p>🔥 FREE FIRE DIAMOND SHOP 🔥</p>
+<p>সেরা দামে ডায়মন্ড টপ-আপ</p>
+</header>
+
+<div class="container">
+
+<div class="box">
+<h2>💎 Diamond Package</h2>
+
+<form id="orderForm">
+
+<label>Free Fire Player ID</label>
+<input type="text" id="player"
+placeholder="তোমার Player ID লিখো" required>
+
+<label>Diamond Package নির্বাচন করো</label>
+
+<select id="package" required>
+<option value="">প্যাকেজ নির্বাচন করো</option>
+<option value="25 Diamond - 20 TK">25 Diamond - ৳20</option>
+<option value="50 Diamond - 36 TK">50 Diamond - ৳36</option>
+<option value="Weekly Lite - 40 TK">Weekly Lite - ৳40</option>
+<option value="100 Diamond - 72 TK">100 Diamond - ৳72</option>
+<option value="115 Diamond - 78 TK">115 Diamond - ৳78</option>
+<option value="240 Diamond - 158 TK">240 Diamond - ৳158</option>
+<option value="355 Diamond - 235 TK">355 Diamond - ৳235</option>
+<option value="480 Diamond - 315 TK">480 Diamond - ৳315</option>
+<option value="505 Diamond - 340 TK">505 Diamond - ৳340</option>
+<option value="610 Diamond - 400 TK">610 Diamond - ৳400</option>
+<option value="725 Diamond - 480 TK">725 Diamond - ৳480</option>
+<option value="Weekly - 155 TK">Weekly - ৳155</option>
+<option value="Monthly - 780 TK">Monthly - ৳780</option>
+</select>
+
+<label>তোমার মোবাইল নম্বর</label>
+<input type="tel" id="phone"
+placeholder="01XXXXXXXXX" required>
+
+<label>bKash Transaction ID</label>
+<input type="text" id="trx"
+placeholder="Transaction ID লিখো" required>
+
+<button type="submit">📲 অর্ডার জমা দাও</button>
+
+</form>
+</div>
+
+<div class="box">
+<h2>💳 bKash Payment</h2>
+
+<div class="payment">
+<p>Payment Method: bKash Personal</p>
+<p>Payment Number: <b>01790533210</b></p>
+<p>১. উপরের নম্বরে Send Money করো।</p>
+<p>২. Transaction ID সংরক্ষণ করো।</p>
+<p>৩. অর্ডার জমা দাও।</p>
+</div>
+</div>
+
+<div class="box">
+<h2>📞 SHADIN TOPUP</h2>
+<p>ধন্যবাদ আমাদের সার্ভিস ব্যবহার করার জন্য।</p>
+</div>
+
+</div>
+
+<footer>
+© 2026 SHADIN TOPUP
+<br>
+All Rights Reserved.
+</footer>
+
+<script>
+document.getElementById("orderForm")
+.addEventListener("submit", function(e) {
+
+e.preventDefault();
+
+const player = document.getElementById("player").value.trim();
+const pack = document.getElementById("package").value;
+const phone = document.getElementById("phone").value.trim();
+const trx = document.getElementById("trx").value.trim();
+
+const message =
+"SHADIN TOPUP ORDER\n" +
+"Player ID: " + player + "\n" +
+"Package: " + pack + "\n" +
+"Phone: " + phone + "\n" +
+"Transaction ID: " + trx;
+
+if (navigator.clipboard && window.isSecureContext) {
+  navigator.clipboard.writeText(message).then(function() {
+    alert("অর্ডারের তথ্য কপি হয়েছে। বিক্রেতার কাছে পাঠিয়ে দাও।");
+  }).catch(function() {
+    prompt("অর্ডারের তথ্য কপি করো:", message);
+  });
+} else {
+  prompt("অর্ডারের তথ্য কপি করো:", message);
+}
+
+});
+</script>
+
+</body>
+</html>
